@@ -9,13 +9,14 @@
  */
 void dbTest::openDB() {
     leveldb::Options options;
-    leveldb::Status status = leveldb::DB::Open(options, DB_DIR, &db);
+    options.create_if_missing = true;
+    leveldb::Status s = leveldb::DB::Open(options, "./tmp", &db);
 
-    if (status.ok()) {
+    if (s.ok()) {
         cout << "[+] Successfully opened db" << endl;
     } else {
-        cout << "[+] Could not open db" << endl;
-        assert(status.ok());
+        cout << "[+] Could not open db : " << s.ToString() << endl;
+        assert(s.ok());
     }
 }
 
@@ -26,15 +27,13 @@ void dbTest::openDB() {
  * @param value The value in std::string.
  */
 void dbTest::putValue(string key, string value) {
-    leveldb::Status s = db->Get(leveldb::ReadOptions(), key, &value);
+    leveldb::Status s;
+    cout << "[+] Putting {" << key << " : " << value << "} to DB..." << endl;
+    s = db->Put(leveldb::WriteOptions(), key, value);
     if (s.ok()) {
-        cout << "[+] Putting {" << key << " : " << value << "} to DB..." << endl;
-        s = db->Put(leveldb::WriteOptions(), key, value);
-        if (s.ok()) {
-            cout << "[+] Successfully put {" << key << " : " << value << "} to DB." << endl;
-        } else {
-            cout << "[-] Failed putting {" << key << " : " << value << "} to DB : " << s.ok() << endl;
-        }
+        cout << "[+] Successfully put {" << key << " : " << value << "} to DB." << endl;
+    } else {
+        cout << "[-] Failed putting {" << key << " : " << value << "} to DB : " << s.ok() << endl;
     }
 }
 

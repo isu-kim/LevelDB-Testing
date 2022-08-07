@@ -27,16 +27,14 @@ This project has `CMakeLists.txt` which it automatically builds everything.
 ### For release mode (no -pg option)
 1. `mkdir build` or any directory that you would like to put build file in.
 2. `cd build`
-3. `cmake ..`
-4. `cmake --build .`
+3.  `cmake .. && cmake --build .`
 
 If any red color comes out instead of green, something is going wrong.
 ### For debug purpose (with -pg option)
 This will support `gdb` and `uftrace` for tracking what is going on.
 1. `mkdir build` or any directory that you would like to put build file in.
 2. `cd build`
-3. `cmake .. -DCMAKE_CXX_FLAGS=-pg`
-4. `cmake --build .`
+3. ` cmake .. -DCMAKE_CXX_FLAGS=-pg && cmake --build .`
 
 ## Issues and PRs
 ### Issue
