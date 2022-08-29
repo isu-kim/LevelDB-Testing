@@ -1,2 +1,0 @@
-SESS timestamp=1287897.003561616 pid=1201585 sid=99373a0e12e83452 exename="/home/gooday2die/projects/School/2022_0.5/LevelDB/newnewnew/tests/LevelDB-Testing/build/leveldbTest"
-TASK timestamp=1287897.003659860 tid=1201585 pid=1201585

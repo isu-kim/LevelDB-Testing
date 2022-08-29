@@ -1,3 +1,0 @@
-/home/gooday2die/projects/School/2022_0.5/LevelDB/newnewnew/tests/LevelDB-Testing/build/CMakeFiles/leveldbTest.dir
-/home/gooday2die/projects/School/2022_0.5/LevelDB/newnewnew/tests/LevelDB-Testing/build/CMakeFiles/edit_cache.dir
-/home/gooday2die/projects/School/2022_0.5/LevelDB/newnewnew/tests/LevelDB-Testing/build/CMakeFiles/rebuild_cache.dir
