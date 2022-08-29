@@ -1,0 +1,1 @@
+/usr/bin/c++ -pg CMakeFiles/leveldbTest.dir/main.cpp.o CMakeFiles/leveldbTest.dir/dbTest.cpp.o -o leveldbTest  -lleveldb 
